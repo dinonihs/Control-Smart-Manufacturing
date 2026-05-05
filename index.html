@@ -18,7 +18,6 @@
         .slide { background: white; padding: 30px; margin-bottom: 35px; border-radius: 15px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); border: 1px solid #eee; overflow: hidden; }
         .badge { background: var(--primary-blue); color: white; padding: 5px 15px; border-radius: 20px; font-size: 0.85em; margin-bottom: 15px; display: inline-block; }
         
-        /* 英文對比強化 */
         .lang-en { color: #1a2a3a; font-style: italic; font-size: 0.95em; display: block; margin-bottom: 5px; font-weight: 600; line-height: 1.4; }
         .highlight-box { background: #f0f7ff; border-right: 5px solid var(--primary-blue); padding: 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
         .highlight-box .lang-en { color: #002244; font-weight: 700; }
@@ -29,34 +28,28 @@
         .flex-container { display: flex; flex-wrap: wrap; gap: 30px; align-items: flex-start; }
         .flex-item { flex: 1; min-width: 300px; }
 
-        /* 04 PLC 插圖佈局 */
         .plc-header-flex { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px; }
         .plc-illus-group { display: flex; gap: 10px; }
         .plc-illus-item { width: 85px; height: 85px; background: #fff; border: 1px solid #ddd; border-radius: 10px; padding: 5px; display: flex; align-items: center; justify-content: center; }
         .plc-illus-item img { max-width: 100%; max-height: 100%; object-fit: contain; }
 
-        /* 05 剪床等高、比例與不裁切設定 */
         .shear-container { display: flex; flex-wrap: wrap; gap: 20px; margin-top: 15px; }
         .shear-group { flex: 1; min-width: 320px; }
         .shear-sub-grid { display: flex; gap: 10px; align-items: stretch; }
         .comp-label { text-align: center; font-weight: bold; padding: 8px; background: var(--primary-blue); color: white; border-radius: 8px 8px 0 0; }
-        .shear-img-wrap { 
-            background: #fafafa; border: 1px solid #eee; border-radius: 8px; 
-            display: flex; align-items: center; justify-content: center; height: 220px; overflow: hidden;
-        }
+        .shear-img-wrap { background: #fafafa; border: 1px solid #eee; border-radius: 8px; display: flex; align-items: center; justify-content: center; height: 220px; overflow: hidden; }
         .shear-img-wrap.large { flex: 1.3; }
         .shear-img-wrap.small { flex: 0.9; }
         .shear-img-wrap img { max-width: 100%; max-height: 100%; object-fit: contain; }
 
-        /* 專案與影音區 */
         .project-row-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 15px; margin-bottom: 15px; }
         .project-img-box { height: 220px; display: flex; align-items: center; justify-content: center; background: #fafafa; border-radius: 10px; border: 1px solid #ddd; }
         .project-img-box img { max-width: 100%; max-height: 100%; object-fit: contain; }
-        .video-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 15px; }
+
+        .video-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 15px; margin-top: 15px; }
         .video-box { position: relative; padding-bottom: 56.25%; height: 0; border-radius: 10px; overflow: hidden; background: #000; }
         .video-box iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; }
         
-        /* 06 機械手臂網格 */
         .robot-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 15px; margin-top: 20px; }
         .robot-item-img { height: 250px; display: flex; align-items: center; justify-content: center; background: #fafafa; border-radius: 10px; border: 1px solid #ddd; }
         .robot-item-img img { max-width: 100%; max-height: 100%; object-fit: contain; }
@@ -84,9 +77,7 @@
                 <span class="lang-en"><strong>Teaching Philosophy</strong>: Achieving the best and most optimal results within the existing systems and policies.</span>
             </div>
         </div>
-        <div class="flex-item img-box" style="flex: 0.7;">
-            <img src="https://lh3.googleusercontent.com/d/1YcTBicLkhq9OwMn1pIcOCUMmxn06pZ7d">
-        </div>
+        <div class="flex-item img-box" style="flex: 0.7;"><img src="https://lh3.googleusercontent.com/d/1YcTBicLkhq9OwMn1pIcOCUMmxn06pZ7d"></div>
     </div>
 </section>
 
@@ -94,13 +85,11 @@
 <section class="slide">
     <div class="badge">02 學校介紹 | School Introduction</div>
     <div class="flex-container">
-        <div class="flex-item img-box" style="flex: 0.9;">
-            <img src="https://lh3.googleusercontent.com/d/1ax3XfNFRhvgfi94fy5EMkxEDTWH3ua-i">
-        </div>
+        <div class="flex-item img-box" style="flex: 0.9;"><img src="https://lh3.googleusercontent.com/d/1ax3XfNFRhvgfi94fy5EMkxEDTWH3ua-i"></div>
         <div class="flex-item">
             <h2>跨領域技術整合 | Multidisciplinary System</h2>
             <p>內湖高工整合資訊、控制、電子、電機、冷凍及應英等專業科系，提供學生多元學習環境。</p>
-            <span class="lang-en">NIHS integrates technical departments to provide a diverse learning environment.</span>
+            <span class="lang-en">NIHS integrates technical departments to provide a diverse technical learning environment.</span>
             <p>控制科發揮「系統整合」的核心優勢。</p>
             <span class="lang-en">The Dept. of Control Engineering leverages its strength in "System Integration".</span>
         </div>
@@ -121,9 +110,7 @@
                 <div style="border:1px solid #ddd; padding:8px; border-radius:8px;"><strong>4. 設備維修工程師</strong><br><span class="lang-en">Equipment Maintenance Engineer</span></div>
             </div>
         </div>
-        <div class="flex-item img-box" style="flex: 1.3;">
-            <img src="https://lh3.googleusercontent.com/d/1AeS7NC_UMg7nTvM3p3TM-llxDjL3XYel">
-        </div>
+        <div class="flex-item img-box" style="flex: 1.3;"><img src="https://lh3.googleusercontent.com/d/1AeS7NC_UMg7nTvM3p3TM-llxDjL3XYel"></div>
     </div>
 </section>
 
@@ -134,7 +121,8 @@
         <div class="flex-item">
             <h3>智慧製造控制基礎 | Industrial PLC Practice</h3>
             <p>掌握 Siemens, Omron 及 Mitsubishi 系統。符合 IEC 61131-3 國際標準。</p>
-            <span class="lang-en">Mastering Siemens, Omron, and Mitsubishi systems following international standards.</span>
+            <!-- 修正後的英文對照 -->
+            <span class="lang-en">Mastering Siemens, Omron, and Mitsubishi systems following IEC 61131-3 international standards.</span>
         </div>
         <div class="plc-illus-group">
             <div class="plc-illus-item"><img src="https://lh3.googleusercontent.com/d/1ZX6detCgh5d6uZ__Ia9XycGPPGjvojv0" alt="S7-1200"></div>
@@ -154,7 +142,6 @@
 <section class="slide">
     <div class="badge">05 整合實習 | Mechatronics Integration</div>
     <h2>數位設計與實務開發 | Design & Prototyping</h2>
-    
     <h3>設施加工與剪床演進 | Machining & Evolution</h3>
     <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 10px; margin-bottom: 20px;">
         <div><div class="img-box"><img src="https://lh3.googleusercontent.com/d/1GVG113l-paN5CuXGSygv0dkFrqQyPkV1"></div><p style="text-align:center; font-size:0.85em;">工業配線 | Industrial Wiring</p></div>
@@ -162,7 +149,6 @@
         <div><div class="img-box"><img src="https://lh3.googleusercontent.com/d/14A1UXmMwtSrwYuVtisxa3rVqcByCufs1"></div><p style="text-align:center; font-size:0.85em;">車床 | Lathe</p></div>
         <div><div class="img-box"><img src="https://lh3.googleusercontent.com/d/1Zt8is069PSh_Z393Cq_KOdye1T_IDBJf"></div><p style="text-align:center; font-size:0.85em;">銑床 | Milling Machine</p></div>
     </div>
-
     <div class="shear-container">
         <div class="shear-group">
             <div class="comp-label">創校時期 | Original</div>
@@ -179,7 +165,6 @@
             </div>
         </div>
     </div>
-
     <h3 style="margin-top:30px;">專案開發成果 | Project Results</h3>
     <div class="project-row-3">
         <div><div class="project-img-box"><img src="https://lh3.googleusercontent.com/d/1vf4Qdue8iJx2K13xqlClBRhT_xUCm_2b"></div><p style="text-align:center; font-size:0.85em;">方推電繪 | Square Pusher CAD</p></div>
@@ -190,7 +175,6 @@
         <div class="video-box"><iframe src="https://drive.google.com/file/d/1c5z7vzCa2D3wB5kr4R8uQgq_vewLVpaC/preview"></iframe></div>
         <div class="video-box"><iframe src="https://drive.google.com/file/d/13SpneUTue9DV1Q0liLlm6oX9jXNfFTVi/preview"></iframe></div>
     </div>
-
     <div style="margin-top: 30px; padding: 20px; border: 1px solid #ddd; border-radius: 12px; background: #fff;">
         <h3>實作成果：搬移機構組 | Transfer Mechanism</h3>
         <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px;">
@@ -205,24 +189,17 @@
     <div class="badge">06 機械手臂 | Robotics</div>
     <h2>機器人虛實整合 | Simulation & Robotics</h2>
     <div class="robot-grid">
-        <div>
-            <p style="text-align:center; font-weight:bold; margin-bottom:5px;">FANUC Robotic Arm</p>
-            <div class="robot-item-img"><img src="https://lh3.googleusercontent.com/d/15K5tKaWHbWCI1r4vmqP2nWZsn_sOTBTh"></div>
-        </div>
-        <div>
-            <p style="text-align:center; font-weight:bold; margin-bottom:5px;">KUKA Robotic Arm</p>
-            <div class="robot-item-img"><img src="https://lh3.googleusercontent.com/d/1OJPX4EQ56ouHFqd734omW95C_bpqegZN"></div>
-        </div>
-        <div>
-            <p style="text-align:center; font-weight:bold; margin-bottom:5px;">XYZ 3-Axis Platform</p>
-            <div class="robot-item-img"><img src="https://lh3.googleusercontent.com/d/1sD2Le40OtS8dulC6X55gLTzBa54EJoG8"></div>
-        </div>
+        <div><p style="text-align:center; font-weight:bold;">FANUC Robotic Arm</p><div class="robot-item-img"><img src="https://lh3.googleusercontent.com/d/15K5tKaWHbWCI1r4vmqP2nWZsn_sOTBTh"></div></div>
+        <div><p style="text-align:center; font-weight:bold;">KUKA Robotic Arm</p><div class="robot-item-img"><img src="https://lh3.googleusercontent.com/d/1OJPX4EQ56ouHFqd734omW95C_bpqegZN"></div></div>
+        <div><p style="text-align:center; font-weight:bold;">XYZ 3-Axis Platform</p><div class="robot-item-img"><img src="https://lh3.googleusercontent.com/d/1sD2Le40OtS8dulC6X55gLTzBa54EJoG8"></div></div>
+    </div>
+    <div class="video-row">
+        <div class="video-box"><iframe src="https://drive.google.com/file/d/13E3nkvmCpruoP9W5cI7pa9GKaJ1ZDAc2/preview"></iframe></div>
+        <div class="video-box"><iframe src="https://drive.google.com/file/d/1ZNwu5671CDzbf841FovxM4LqCt9tovJH/preview"></iframe></div>
     </div>
 </section>
 
-<footer>
-    <p>台北市立內湖高級工業職業學校 - 控制科 | Dept. of Control Engineering, NIHS</p>
-</footer>
+<footer><p>台北市立內湖高級工業職業學校 - 控制科 | Dept. of Control Engineering, NIHS</p></footer>
 
 </body>
 </html>
