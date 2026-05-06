@@ -22,6 +22,11 @@
         .highlight-box { background: #f0f7ff; border-right: 5px solid var(--primary-blue); padding: 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
         .highlight-box .lang-en { color: #002244; font-weight: 700; }
 
+        /* 摘要下載按鈕樣式 */
+        .abstract-download { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 15px; }
+        .abs-btn { text-decoration: none; background: #fff; border: 1px solid var(--primary-blue); color: var(--primary-blue); padding: 8px 15px; border-radius: 5px; font-size: 0.85em; transition: 0.3s; display: flex; align-items: center; gap: 5px; font-weight: bold; }
+        .abs-btn:hover { background: var(--primary-blue); color: #fff; }
+
         .img-box { border-radius: 10px; overflow: hidden; border: 1px solid #ddd; background: #fff; margin-top: 10px; box-shadow: 2px 2px 8px rgba(0,0,0,0.05); }
         .img-box img { width: 100%; height: auto; display: block; }
         
@@ -56,7 +61,7 @@
 
         footer { text-align: center; color: #999; font-size: 0.9em; margin-top: 50px; padding: 30px; border-top: 1px solid #ddd; }
 
-        /* --- 語音導覽播放器樣式 --- */
+        /* 語音導覽播放器樣式 */
         #audio-panel button:hover { transform: scale(1.1); filter: brightness(1.2); }
         @media (max-width: 600px) {
             #audio-panel { bottom: 15px; right: 15px; }
@@ -83,6 +88,13 @@
             <div class="highlight-box">
                 <p><strong>教學理念</strong>：在現有的制度與狀況下，努力作出最好與最佳的結果。</p>
                 <span class="lang-en"><strong>Teaching Philosophy</strong>: Striving to achieve the best and most optimal results within the existing systems and conditions.</span>
+            </div>
+            
+            <h3>摘要稿下載 | Abstract Downloads</h3>
+            <div class="abstract-download">
+                <a href="https://drive.google.com/file/d/1ugua152yrmUpV97n2UEZ14YagdO60sgM/view?usp=sharing" target="_blank" class="abs-btn">📄 中文摘要 (CN)</a>
+                <a href="https://drive.google.com/file/d/1ADATu6KcSDZ1Bf4sxcRhXOu8hGIvv-Nx/view?usp=sharing" target="_blank" class="abs-btn">📄 English Abstract (EN)</a>
+                <a href="https://drive.google.com/file/d/1mPai6u4A7Os5VRdvmQ4UMtt1FPyTaaXF/view?usp=sharing" target="_blank" class="abs-btn">📄 Resumen en Español (ES)</a>
             </div>
         </div>
         <div class="flex-item img-box" style="flex: 0.7;"><img src="https://lh3.googleusercontent.com/d/1YcTBicLkhq9OwMn1pIcOCUMmxn06pZ7d"></div>
@@ -179,7 +191,7 @@
         <div><div class="project-img-box"><img src="https://lh3.googleusercontent.com/d/1vrNemXyrbaNs_ZwN_S0BaY6wLKPTbrXY"></div><p style="text-align:center; font-size:0.85em;">秤重台實體 | Weighing Scale</p></div>
     </div>
     <div class="video-row">
-        <!-- 影片已設為靜音以防止中斷導覽音軌 -->
+        <!-- 影片已設為靜音，防止中斷導覽音軌 -->
         <div class="video-box"><iframe src="https://drive.google.com/file/d/1HCDqfNNnrugaReE05Psv_fWcMrgMBACg/preview?muted=1" allow="autoplay; muted"></iframe></div>
         <div class="video-box"><iframe src="https://drive.google.com/file/d/14AwuU1hgVKjUHtV1WcnLxySRj987sLne/preview?muted=1" allow="autoplay; muted"></iframe></div>
     </div>
@@ -202,7 +214,6 @@
         <div><p style="text-align:center; font-weight:bold;">XYZ 3-Axis Platform</p><div class="robot-item-img"><img src="https://lh3.googleusercontent.com/d/1sD2Le40OtS8dulC6X55gLTzBa54EJoG8"></div></div>
     </div>
     <div class="video-row">
-        <!-- 影片已設為靜音以防止中斷導覽音軌 -->
         <div class="video-box"><iframe src="https://drive.google.com/file/d/1GfIpaPCQlidakY140OzeJPvk74JzoW-v/preview?muted=1" allow="autoplay; muted"></iframe></div>
         <div class="video-box"><iframe src="https://drive.google.com/file/d/1LsA35odY07tEBIMoNL5SqPh8W2EJ5c_l/preview?muted=1" allow="autoplay; muted"></iframe></div>
     </div>
@@ -213,10 +224,10 @@
 <!-- 語音導覽播放控制區 -->
 <div id="audio-panel" style="position: fixed; bottom: 20px; right: 20px; z-index: 9999; display: flex; flex-direction: column; gap: 10px; align-items: flex-end;">
     <div style="display: flex; flex-direction: column; gap: 8px;">
-        <button onclick="openMiniPlayer('en')" title="English Voice" style="width: 50px; height: 50px; border-radius: 50%; border: 3px solid white; background: #004a99; color: white; cursor: pointer; box-shadow: 0 4px 10px rgba(0,0,0,0.3); font-weight: bold; font-family: Arial; font-size: 14px; transition: 0.3s;">EN</button>
-        <button onclick="openMiniPlayer('es')" title="Voz en Español" style="width: 50px; height: 50px; border-radius: 50%; border: 3px solid white; background: #c60b1e; color: white; cursor: pointer; box-shadow: 0 4px 10px rgba(0,0,0,0.3); font-weight: bold; font-family: Arial; font-size: 14px; transition: 0.3s;">ES</button>
+        <button onclick="openMiniPlayer('en')" title="English Voice" style="width: 50px; height: 50px; border-radius: 50%; border: 3px solid white; background: #004a87; color: white; cursor: pointer; box-shadow: 0 4px 10px rgba(0,0,0,0.3); font-weight: bold; font-family: Arial; font-size: 14px;">EN</button>
+        <button onclick="openMiniPlayer('es')" title="Voz en Español" style="width: 50px; height: 50px; border-radius: 50%; border: 3px solid white; background: #c60b1e; color: white; cursor: pointer; box-shadow: 0 4px 10px rgba(0,0,0,0.3); font-weight: bold; font-family: Arial; font-size: 14px;">ES</button>
     </div>
-    <div id="mini-player-box" style="display: none; background: #ffffff; padding: 8px; border-radius: 12px; box-shadow: 0 8px 20px rgba(0,0,0,0.3); width: 220px; border: 1px solid #eee; transition: 0.3s;">
+    <div id="mini-player-box" style="display: none; background: #ffffff; padding: 8px; border-radius: 12px; box-shadow: 0 8px 20px rgba(0,0,0,0.3); width: 220px; border: 1px solid #eee;">
         <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 5px; padding: 0 5px;">
             <span id="player-title" style="font-size: 11px; color: #666; font-weight: bold; font-family: sans-serif;">Audio Player</span>
             <button onclick="closeMiniPlayer()" style="border: none; background: #ddd; color: #555; border-radius: 50%; width: 18px; height: 18px; cursor: pointer; font-size: 10px; line-height: 18px; text-align: center;">✕</button>
@@ -242,7 +253,7 @@
     function closeMiniPlayer() {
         const box = document.getElementById('mini-player-box');
         const iframe = document.getElementById('audio-frame');
-        iframe.src = "";
+        iframe.src = ""; // 重置來源以停止播放
         box.style.display = 'none';
     }
 </script>
