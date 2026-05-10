@@ -5,82 +5,51 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>控制與智慧製造 - Control & Smart Manufacturing</title>
     <style>
-        /* --- 原始排版樣式保持不變 --- */
+        /* --- 核心樣式：定錨鎖定與空白壓實 --- */
         :root { --primary-blue: #004a87; --bg-gray: #f8f9fa; }
-        body { font-family: 'PingFang TC', 'Microsoft JhengHei', sans-serif; line-height: 1.6; color: #333; max-width: 1200px; margin: 0 auto; padding: 15px; background-color: var(--bg-gray); -webkit-text-size-adjust: 100%; }
+        body { font-family: 'PingFang TC', 'Microsoft JhengHei', sans-serif; line-height: 1.6; color: #333; max-width: 1200px; margin: 0 auto; padding: 10px; background-color: var(--bg-gray); }
         
-        header { background: var(--primary-blue); color: white; padding: 40px 20px; text-align: center; border-radius: 12px; margin-bottom: 30px; }
-        header h1 { margin: 0; font-size: 2.2em; }
-        header .lang-en { color: #ffffff; font-weight: 500; opacity: 0.95; margin-top: 10px; font-size: 1.1em; display: block; }
+        header { background: var(--primary-blue); color: white; padding: 20px 20px; text-align: center; border-radius: 12px; margin-bottom: 15px; }
+        header h1 { margin: 0; font-size: 2em; }
+        header .lang-en { color: #ffffff; font-weight: 500; opacity: 0.95; margin-top: 3px; font-size: 1em; display: block; }
 
-        h2 { color: var(--primary-blue); border-left: 6px solid var(--primary-blue); padding-left: 15px; margin: 20px 0; font-size: 1.6em; }
-        h3 { color: #444; margin-top: 25px; border-bottom: 1px solid #ddd; padding-bottom: 5px; }
+        h2 { color: var(--primary-blue); border-left: 6px solid var(--primary-blue); padding-left: 15px; margin: 10px 0 5px 0; font-size: 1.5em; }
+        h3 { color: #444; margin: 15px 0 8px 0; border-bottom: 1px solid #ddd; padding-bottom: 5px; font-size: 1.2em; }
         
-        .slide { background: white; padding: 30px; margin-bottom: 35px; border-radius: 15px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); border: 1px solid #eee; overflow: hidden; }
-        .badge { background: var(--primary-blue); color: white; padding: 5px 15px; border-radius: 20px; font-size: 0.85em; margin-bottom: 15px; display: inline-block; }
+        .slide { background: white; padding: 15px 25px; margin-bottom: 20px; border-radius: 15px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); border: 1px solid #eee; overflow: hidden; }
+        .badge { background: var(--primary-blue); color: white; padding: 4px 14px; border-radius: 20px; font-size: 0.85em; margin-bottom: 10px; display: inline-block; font-weight: bold; }
         
-        .lang-en { color: #1a2a3a; font-style: italic; font-size: 0.95em; display: block; margin-bottom: 5px; font-weight: 600; line-height: 1.4; }
-        .highlight-box { background: #f0f7ff; border-right: 5px solid var(--primary-blue); padding: 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+        .lang-en { color: #1a2a3a; font-style: italic; font-size: 0.92em; display: block; margin: 0 0 5px 0; font-weight: 600; line-height: 1.3; }
 
-        .abstract-download { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 15px; }
-        .abs-btn { text-decoration: none; background: #fff; border: 1px solid var(--primary-blue); color: var(--primary-blue); padding: 8px 15px; border-radius: 5px; font-size: 0.85em; transition: 0.3s; display: flex; align-items: center; gap: 5px; font-weight: bold; }
-        .abs-btn:hover { background: var(--primary-blue); color: #fff; }
+        /* 08 專用副標題 (與 06 同大 1.5em) */
+        .subtitle-08 { font-size: 1.5em; color: var(--primary-blue); font-weight: bold; margin-bottom: 10px; border-left: 6px solid var(--primary-blue); padding-left: 15px; }
 
-        .img-box { border-radius: 10px; overflow: hidden; border: 1px solid #ddd; background: #fff; margin-top: 10px; box-shadow: 2px 2px 8px rgba(0,0,0,0.05); }
+        .abstract-download { display: flex; gap: 8px; flex-wrap: nowrap; margin-top: 10px; overflow-x: auto; padding-bottom: 5px; }
+        .abs-btn { text-decoration: none; background: #fff; border: 1px solid #004a87; color: #004a87; padding: 5px 10px; border-radius: 6px; font-size: 0.82em; transition: 0.3s; display: flex; align-items: center; gap: 5px; font-weight: bold; white-space: nowrap; flex-shrink: 0; }
+        .abs-btn:hover { background: #004a87; color: #fff; }
+
+        .img-box { border-radius: 10px; overflow: hidden; border: 1px solid #ddd; background: #fff; margin-top: 5px; box-shadow: 2px 2px 8px rgba(0,0,0,0.05); }
         .img-box img { width: 100%; height: auto; display: block; }
         
-        .flex-container { display: flex; flex-wrap: wrap; gap: 30px; align-items: flex-start; }
+        .flex-container { display: flex; flex-wrap: wrap; gap: 20px; align-items: flex-start; }
         .flex-item { flex: 1; min-width: 300px; }
 
-        .plc-header-flex { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px; }
-        .plc-illus-group { display: flex; gap: 10px; }
-        .plc-illus-item { width: 85px; height: 85px; background: #fff; border: 1px solid #ddd; border-radius: 10px; padding: 5px; display: flex; align-items: center; justify-content: center; }
-        .plc-illus-item img { max-width: 100%; max-height: 100%; object-fit: contain; }
-
-        .shear-container { display: flex; flex-wrap: wrap; gap: 20px; margin-top: 15px; }
-        .shear-group { flex: 1; min-width: 320px; }
-        .shear-sub-grid { display: flex; gap: 10px; align-items: stretch; }
-        .comp-label { text-align: center; font-weight: bold; padding: 8px; background: var(--primary-blue); color: white; border-radius: 8px 8px 0 0; }
-        .shear-img-wrap { background: #fafafa; border: 1px solid #eee; border-radius: 8px; display: flex; align-items: center; justify-content: center; height: 220px; overflow: hidden; }
-        .shear-img-wrap.large { flex: 1.3; }
-        .shear-img-wrap.small { flex: 0.9; }
-        .shear-img-wrap img { max-width: 100%; max-height: 100%; object-fit: contain; }
-
-        .project-row-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 15px; margin-bottom: 15px; }
-        .project-img-box { height: 220px; display: flex; align-items: center; justify-content: center; background: #fafafa; border-radius: 10px; border: 1px solid #ddd; }
-        .project-img-box img { max-width: 100%; max-height: 100%; object-fit: contain; }
-
-        .video-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 15px; margin-top: 15px; }
+        /* 影片容器 */
         .video-box { position: relative; padding-bottom: 56.25%; height: 0; border-radius: 10px; overflow: hidden; background: #000; }
         .video-box iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; }
+        .video-label { text-align: center; font-weight: bold; margin-bottom: 5px; font-size: 0.9em; color: #333; }
+        .video-grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 15px; }
+
+        /* 語音按鈕 UI */
+        #audio-panel button { width: 65px !important; height: 65px !important; border-radius: 50%; border: 3px solid #fff; color: #fff; cursor: pointer; box-shadow: 0 4px 12px rgba(0,0,0,0.3); font-weight: bold; font-size: 13px; transition: 0.3s; display: flex; flex-direction: column; align-items: center; justify-content: center; line-height: 1.1; margin-bottom: 8px; }
+        #audio-panel button span { font-size: 16px; margin-bottom: 2px; white-space: nowrap; }
+
+        footer { text-align: center; color: #999; font-size: 0.85em; margin-top: 30px; padding: 20px; border-top: 1px solid #ddd; }
         
-        .robot-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 15px; margin-top: 20px; }
-        .robot-item-img { height: 250px; display: flex; align-items: center; justify-content: center; background: #fafafa; border-radius: 10px; border: 1px solid #ddd; }
-        .robot-item-img img { max-width: 100%; max-height: 100%; object-fit: contain; }
-
-        footer { text-align: center; color: #999; font-size: 0.9em; margin-top: 50px; padding: 30px; border-top: 1px solid #ddd; }
-
-        /* --- 語音導覽 UI：極簡無字版 --- */
-        #audio-panel button { 
-            width: 55px !important; height: 55px !important; 
-            border-radius: 50%; border: 3px solid white; color: white; 
-            cursor: pointer; box-shadow: 0 4px 10px rgba(0,0,0,0.3); 
-            font-weight: bold; font-size: 12px; transition: 0.3s;
-            display: flex; flex-direction: column; align-items: center; justify-content: center; line-height: 1.1;
-            animation: pulse-light 3s infinite ease-in-out;
-        }
-
-        @keyframes pulse-light {
-            0% { transform: scale(1); box-shadow: 0 4px 10px rgba(0,0,0,0.3); }
-            50% { transform: scale(1.06); box-shadow: 0 6px 15px rgba(0,0,0,0.4); }
-            100% { transform: scale(1); box-shadow: 0 4px 10px rgba(0,0,0,0.3); }
-        }
-        #audio-panel button:hover { transform: scale(1.1); filter: brightness(1.2); animation: none; }
-
-        @media (max-width: 600px) {
-            #audio-panel { bottom: 15px; right: 15px; }
-            #audio-panel button { width: 50px !important; height: 50px !important; }
-            #mini-player-box { width: 190px; }
+        @media (max-width: 800px) {
+            .flex-8-custom { flex-direction: column !important; }
+            .flex-8-custom > div { width: 100% !important; }
+            .video-grid-2 { grid-template-columns: 1fr; }
         }
     </style>
 </head>
@@ -98,16 +67,15 @@
             <h2>專業背景與成就 | Professional Achievement</h2>
             <p>我是臺北市立內湖高工控制科教師，具備全國技能競賽獲獎之紮實實作經驗。</p>
             <span class="lang-en">Teacher at NIHS Dept. of Control Engineering, with award-winning practical experience in National Skills Competitions.</span>
-            <div class="highlight-box">
-                <p><strong>教學理念</strong>：在現有的制度與狀況下，努力作出最好與最佳的結果。</p>
+            <div style="background: #f0f7ff; border-right: 5px solid var(--primary-blue); padding: 15px; margin: 15px 0; border-radius: 0 8px 8px 0;">
+                <p><strong>教學理念</strong>：在現有的制度與狀況下，努力做出最好與最佳的結果。</p>
                 <span class="lang-en"><strong>Teaching Philosophy</strong>: Striving to achieve the best and most optimal results within the existing systems and conditions.</span>
             </div>
-            
             <h3>摘要稿下載 | Abstract Downloads</h3>
             <div class="abstract-download">
                 <a href="https://drive.google.com/file/d/1ugua152yrmUpV97n2UEZ14YagdO60sgM/view?usp=sharing" target="_blank" class="abs-btn">📄 中文摘要 (CN)</a>
                 <a href="https://drive.google.com/file/d/1ADATu6KcSDZ1Bf4sxcRhXOu8hGIvv-Nx/view?usp=sharing" target="_blank" class="abs-btn">📄 English Abstract (EN)</a>
-                <a href="https://drive.google.com/file/d/1mPai6u4A7Os5VRdvmQ4UMtt1FPyTaaXF/view?usp=sharing" target="_blank" class="abs-btn">📄 Resumen en Español (ES)</a>
+                <a href="https://drive.google.com/file/d/1mPai6u4A7Os5VRdvmQ4UMtt1FPyTaaXF/view?usp=sharing" target="_blank" class="abs-btn">📄 Resumen (ES)</a>
             </div>
         </div>
         <div class="flex-item img-box" style="flex: 0.7;"><img src="https://lh3.googleusercontent.com/d/1YcTBicLkhq9OwMn1pIcOCUMmxn06pZ7d"></div>
@@ -134,7 +102,7 @@
     <div class="flex-container">
         <div class="flex-item">
             <p>培養具備產業即戰力的四類核心工程師：</p>
-            <div style="display:grid; gap:8px; margin-top:10px;">
+            <div style="display:grid; gap:8px; margin-top:8px;">
                 <div style="border:1px solid #ddd; padding:8px; border-radius:8px;"><strong>1. 自動化控制工程師</strong><br><span class="lang-en">Automation Control Engineer</span></div>
                 <div style="border:1px solid #ddd; padding:8px; border-radius:8px;"><strong>2. 機電整合工程師</strong><br><span class="lang-en">Mechatronics Engineer</span></div>
                 <div style="border:1px solid #ddd; padding:8px; border-radius:8px;"><strong>3. FAE 應用工程師</strong><br><span class="lang-en">Field Application Engineer</span></div>
@@ -147,16 +115,15 @@
 
 <section class="slide">
     <div class="badge">04 核心技術 | PLC Technology</div>
-    <div class="plc-header-flex">
+    <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:15px;">
         <div class="flex-item">
             <h3>智慧製造控制基礎 | Industrial PLC Practice</h3>
             <p>掌握 Siemens, Omron 及 Mitsubishi 系統。符合 IEC 61131-3 國際標準。</p>
-            <span class="lang-en">Mastering Siemens, Omron, and Mitsubishi systems following IEC 61131-3 international standards.</span>
         </div>
-        <div class="plc-illus-group">
-            <div class="plc-illus-item"><img src="https://lh3.googleusercontent.com/d/1ZX6detCgh5d6uZ__Ia9XycGPPGjvojv0" alt="S7-1200"></div>
-            <div class="plc-illus-item"><img src="https://lh3.googleusercontent.com/d/1p-YlVnxSOTciFAzB59yiOmp0N8gdzyA8" alt="NX102"></div>
-            <div class="plc-illus-item"><img src="https://lh3.googleusercontent.com/d/1JNXVh_HzKYsyT3HcRN94GUqI7Ei7fvXl" alt="FX3U"></div>
+        <div style="display:flex; gap:8px;">
+            <div style="width:80px; height:80px; background:#fff; border:1px solid #ddd; border-radius:10px; padding:5px; display:flex; align-items:center; justify-content:center;"><img src="https://lh3.googleusercontent.com/d/1ZX6detCgh5d6uZ__Ia9XycGPPGjvojv0" style="max-width:100%; max-height:100%;"></div>
+            <div style="width:80px; height:80px; background:#fff; border:1px solid #ddd; border-radius:10px; padding:5px; display:flex; align-items:center; justify-content:center;"><img src="https://lh3.googleusercontent.com/d/1p-YlVnxSOTciFAzB59yiOmp0N8gdzyA8" style="max-width:100%; max-height:100%;"></div>
+            <div style="width:80px; height:80px; background:#fff; border:1px solid #ddd; border-radius:10px; padding:5px; display:flex; align-items:center; justify-content:center;"><img src="https://lh3.googleusercontent.com/d/1JNXVh_HzKYsyT3HcRN94GUqI7Ei7fvXl" style="max-width:100%; max-height:100%;"></div>
         </div>
     </div>
     <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; margin-top: 15px;">
@@ -171,83 +138,96 @@
     <div class="badge">05 整合實習 | Mechatronics Integration</div>
     <h2>整合設計與實務開發 | Integrated Design & Prototyping</h2>
     <h3>設施加工與剪床演進 | Machining & Evolution</h3>
-    <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 10px; margin-bottom: 20px;">
-        <div><div class="img-box"><img src="https://lh3.googleusercontent.com/d/1GVG113l-paN5CuXGSygv0dkFrqQyPkV1"></div><p style="text-align:center; font-size:0.85em;">工業配線 | Industrial Wiring</p></div>
-        <div><div class="img-box"><img src="https://lh3.googleusercontent.com/d/1WtWVmsLMWUi-gBYftteuoYBoDdejMLZO"></div><p style="text-align:center; font-size:0.85em;">簡易加工 | Simple Machining</p></div>
-        <div><div class="img-box"><img src="https://lh3.googleusercontent.com/d/14A1UXmMwtSrwYuVtisxa3rVqcByCufs1"></div><p style="text-align:center; font-size:0.85em;">車床 | Lathe</p></div>
-        <div><div class="img-box"><img src="https://lh3.googleusercontent.com/d/1Zt8is069PSh_Z393Cq_KOdye1T_IDBJf"></div><p style="text-align:center; font-size:0.85em;">銑床 | Milling Machine</p></div>
+    <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); gap: 10px; margin-bottom: 15px;">
+        <div><div class="img-box"><img src="https://lh3.googleusercontent.com/d/1GVG113l-paN5CuXGSygv0dkFrqQyPkV1"></div><p style="text-align:center; font-size:0.8em;">工業配線</p></div>
+        <div><div class="img-box"><img src="https://lh3.googleusercontent.com/d/1WtWVmsLMWUi-gBYftteuoYBoDdejMLZO"></div><p style="text-align:center; font-size:0.8em;">簡易加工</p></div>
+        <div><div class="img-box"><img src="https://lh3.googleusercontent.com/d/14A1UXmMwtSrwYuVtisxa3rVqcByCufs1"></div><p style="text-align:center; font-size:0.8em;">車床</p></div>
+        <div><div class="img-box"><img src="https://lh3.googleusercontent.com/d/1Zt8is069PSh_Z393Cq_KOdye1T_IDBJf"></div><p style="text-align:center; font-size:0.8em;">銑床</p></div>
     </div>
-    <div class="shear-container">
-        <div class="shear-group">
-            <div class="comp-label">創校時期 | Original</div>
-            <div class="shear-sub-grid">
-                <div class="shear-img-wrap large"><img src="https://lh3.googleusercontent.com/d/1YcLVgv9WZtgprmpTwHI3ZdmQ_AfpRADM"></div>
-                <div class="shear-img-wrap small"><img src="https://lh3.googleusercontent.com/d/1W20SH3_EV8cW-JIZb1bJ4Io5kjWpDg8-"></div>
+    <div style="display:flex; flex-wrap:wrap; gap:15px; margin-top:10px;">
+        <div style="flex:1; min-width:300px;">
+            <div style="text-align:center; font-weight:bold; padding:5px; background:var(--primary-blue); color:white; border-radius:8px 8px 0 0; font-size:0.85em;">創校時期</div>
+            <div style="display:flex; gap:10px; align-items:stretch;">
+                <div style="flex:1.3; background:#fafafa; border:1px solid #eee; border-radius:8px; display:flex; align-items:center; justify-content:center; height:180px; overflow:hidden;"><img src="https://lh3.googleusercontent.com/d/1YcLVgv9WZtgprmpTwHI3ZdmQ_AfpRADM" style="max-width:100%; max-height:100%;"></div>
+                <div style="flex:0.9; background:#fafafa; border:1px solid #eee; border-radius:8px; display:flex; align-items:center; justify-content:center; height:180px; overflow:hidden;"><img src="https://lh3.googleusercontent.com/d/1W20SH3_EV8cW-JIZb1bJ4Io5kjWpDg8-" style="max-width:100%; max-height:100%;"></div>
             </div>
         </div>
-        <div class="shear-group">
-            <div class="comp-label">整理後 | Current</div>
-            <div class="shear-sub-grid">
-                <div class="shear-img-wrap large"><img src="https://lh3.googleusercontent.com/d/1-LCCj6dr24kERG1X55GLkW3Uzxjsh0Es"></div>
-                <div class="shear-img-wrap small"><img src="https://lh3.googleusercontent.com/d/1Wbd1mM1C-tMTdsRU4w_MHFBqRjbs4LU1"></div>
+        <div style="flex:1; min-width:300px;">
+            <div style="text-align:center; font-weight:bold; padding:5px; background:var(--primary-blue); color:white; border-radius:8px 8px 0 0; font-size:0.85em;">整理後</div>
+            <div style="display:flex; gap:10px; align-items:stretch;">
+                <div style="flex:1.3; background:#fafafa; border:1px solid #eee; border-radius:8px; display:flex; align-items:center; justify-content:center; height:180px; overflow:hidden;"><img src="https://lh3.googleusercontent.com/d/1-LCCj6dr24kERG1X55GLkW3Uzxjsh0Es" style="max-width:100%; max-height:100%;"></div>
+                <div style="flex:0.9; background:#fafafa; border:1px solid #eee; border-radius:8px; display:flex; align-items:center; justify-content:center; height:180px; overflow:hidden;"><img src="https://lh3.googleusercontent.com/d/1Wbd1mM1C-tMTdsRU4w_MHFBqRjbs4LU1" style="max-width:100%; max-height:100%;"></div>
             </div>
         </div>
     </div>
-    <h3 style="margin-top:30px;">專案開發成果 | Project Results</h3>
-    <div class="project-row-3">
-        <div><div class="project-img-box"><img src="https://lh3.googleusercontent.com/d/1vf4Qdue8iJx2K13xqlClBRhT_xUCm_2b"></div><p style="text-align:center; font-size:0.85em;">方推電繪 | Square Pusher CAD</p></div>
-        <div><div class="project-img-box"><img src="https://lh3.googleusercontent.com/d/1VYCv3anSyHlXVoep3gC2-fpgnnb4jrg4"></div><p style="text-align:center; font-size:0.85em;">圓推電繪 | Round Pusher CAD</p></div>
-        <div><div class="project-img-box"><img src="https://lh3.googleusercontent.com/d/1vrNemXyrbaNs_ZwN_S0BaY6wLKPTbrXY"></div><p style="text-align:center; font-size:0.85em;">秤重台實體 | Weighing Scale</p></div>
+    <h3 style="margin-top:20px;">專案開發成果 | Project Results</h3>
+    <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap:12px;">
+        <div><div style="height:160px; display:flex; align-items:center; justify-content:center; background:#fafafa; border-radius:10px; border:1px solid #ddd;"><img src="https://lh3.googleusercontent.com/d/1vf4Qdue8iJx2K13xqlClBRhT_xUCm_2b" style="max-width:100%; max-height:100%;"></div><p style="text-align:center; font-size:0.8em;">方推電繪</p></div>
+        <div><div style="height:160px; display:flex; align-items:center; justify-content:center; background:#fafafa; border-radius:10px; border:1px solid #ddd;"><img src="https://lh3.googleusercontent.com/d/1VYCv3anSyHlXVoep3gC2-fpgnnb4jrg4" style="max-width:100%; max-height:100%;"></div><p style="text-align:center; font-size:0.8em;">圓推電繪</p></div>
+        <div><div style="height:160px; display:flex; align-items:center; justify-content:center; background:#fafafa; border-radius:10px; border:1px solid #ddd;"><img src="https://lh3.googleusercontent.com/d/1vrNemXyrbaNs_ZwN_S0BaY6wLKPTbrXY" style="max-width:100%; max-height:100%;"></div><p style="text-align:center; font-size:0.8em;">秤重台實體</p></div>
     </div>
-    <div class="video-row">
-        <div class="video-box"><iframe src="https://drive.google.com/file/d/1HCDqfNNnrugaReE05Psv_fWcMrgMBACg/preview?muted=1" allow="autoplay; muted"></iframe></div>
-        <div class="video-box"><iframe src="https://drive.google.com/file/d/14AwuU1hgVKjUHtV1WcnLxySRj987sLne/preview?muted=1" allow="autoplay; muted"></iframe></div>
-    </div>
-    <div style="margin-top: 30px; padding: 20px; border: 1px solid #ddd; border-radius: 12px; background: #fff;">
-        <h3>實作成果：搬移機構組 | Transfer Mechanism</h3>
-        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px;">
-            <div class="img-box"><img src="https://lh3.googleusercontent.com/d/1CjO3aGPKewEmNCn0kx0ey6gDEenuetAl"></div>
-            <div class="img-box"><img src="https://lh3.googleusercontent.com/d/1GFzBSCgRgKCBvxnput37kk3ieEfGYk54"></div>
-        </div>
+    <div class="video-grid-2">
+        <div class="video-box"><iframe src="https://drive.google.com/file/d/1HCDqfNNnrugaReE05Psv_fWcMrgMBACg/preview?muted=1" allowfullscreen></iframe></div>
+        <div class="video-box"><iframe src="https://drive.google.com/file/d/14AwuU1hgVKjUHtV1WcnLxySRj987sLne/preview?muted=1" allowfullscreen></iframe></div>
     </div>
 </section>
 
 <section class="slide">
     <div class="badge">06 機械手臂 | Robotics</div>
     <h2>機器人虛實整合 | Simulation & Robotics</h2>
-    <div class="robot-grid">
-        <div><p style="text-align:center; font-weight:bold;">FANUC Robotic Arm</p><div class="robot-item-img"><img src="https://lh3.googleusercontent.com/d/15K5tKaWHbWCI1r4vmqP2nWZsn_sOTBTh"></div></div>
-        <div><p style="text-align:center; font-weight:bold;">KUKA Robotic Arm</p><div class="robot-item-img"><img src="https://lh3.googleusercontent.com/d/1OJPX4EQ56ouHFqd734omW95C_bpqegZN"></div></div>
-        <div><p style="text-align:center; font-weight:bold;">XYZ 3-Axis Platform</p><div class="robot-item-img"><img src="https://lh3.googleusercontent.com/d/1sD2Le40OtS8dulC6X55gLTzBa54EJoG8"></div></div>
+    <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 15px;">
+        <div><p class="video-label">FANUC Robotic Arm</p><div style="height:200px; display:flex; align-items:center; justify-content:center; background:#fafafa; border-radius:10px; border:1px solid #ddd;"><img src="https://lh3.googleusercontent.com/d/15K5tKaWHbWCI1r4vmqP2nWZsn_sOTBTh" style="max-width:100%; max-height:100%;"></div></div>
+        <div><p class="video-label">KUKA Robotic Arm</p><div style="height:200px; display:flex; align-items:center; justify-content:center; background:#fafafa; border-radius:10px; border:1px solid #ddd;"><img src="https://lh3.googleusercontent.com/d/1OJPX4EQ56ouHFqd734omW95C_bpqegZN" style="max-width:100%; max-height:100%;"></div></div>
+        <div><p class="video-label">XYZ 3-Axis Platform</p><div style="height:200px; display:flex; align-items:center; justify-content:center; background:#fafafa; border-radius:10px; border:1px solid #ddd;"><img src="https://lh3.googleusercontent.com/d/1sD2Le40OtS8dulC6X55gLTzBa54EJoG8" style="max-width:100%; max-height:100%;"></div></div>
     </div>
-    <div class="video-row">
-        <div class="video-box"><iframe src="https://drive.google.com/file/d/1GfIpaPCQlidakY140OzeJPvk74JzoW-v/preview?muted=1" allow="autoplay; muted"></iframe></div>
-        <div class="video-box"><iframe src="https://drive.google.com/file/d/1LsA35odY07tEBIMoNL5SqPh8W2EJ5c_l/preview?muted=1" allow="autoplay; muted"></iframe></div>
+    <div class="video-grid-2">
+        <div class="video-box"><iframe src="https://drive.google.com/file/d/1GfIpaPCQlidakY140OzeJPvk74JzoW-v/preview?muted=1" allowfullscreen></iframe></div>
+        <div class="video-box"><iframe src="https://drive.google.com/file/d/1LsA35odY07tEBIMoNL5SqPh8W2EJ5c_l/preview?muted=1" allowfullscreen></iframe></div>
+    </div>
+</section>
+
+<section class="slide">
+    <div class="badge">08 AI 協作教案 | AI Collaboration</div>
+    <div class="subtitle-08">從對話到網頁實作 | From Dialogue to Web Implementation</div>
+    
+    <div class="flex-8-custom" style="display: flex; align-items: flex-start; justify-content: space-between; margin-top: 40px;">
+        <div style="width: 47.5%; flex-shrink: 0; line-height: 1.8;">
+            <p style="margin: 0; padding-bottom: 10px;">這次網頁製作讓我深刻體悟到，與 AI 協作是必修的關鍵技能。我將這段實作過程中的磨合與心得，整理成 9 節課的實務教案，提供教學參考。</p>
+            <br>
+            <span class="lang-en">AI collaboration is an essential skill. I have distilled this practical experience into a 9-lesson curriculum as a guide for future teaching.</span>
+            <br><br>
+        </div>
+        <div style="width: 50%; flex-shrink: 0;">
+            <p class="video-label">中文說明 (CN)</p>
+            <div class="video-box">
+                <iframe src="https://drive.google.com/file/d/1NLJWo3QwvrYAW5xgjFts4IRZgQszBAc2/preview" allowfullscreen></iframe>
+            </div>
+        </div>
+    </div>
+
+    <h3 style="margin-top: 25px;">其他語言教案引導 | Guides in Other Languages</h3>
+    <div class="video-grid-2">
+        <div>
+            <p class="video-label">English Guide (EN)</p>
+            <div class="video-box"><iframe src="https://drive.google.com/file/d/1j89_dACBMxGhNyWqA9iW4LHo4OLeZqrZ/preview" allowfullscreen></iframe></div>
+        </div>
+        <div>
+            <p class="video-label">Guía en Español (ES)</p>
+            <div class="video-box"><iframe src="https://drive.google.com/file/d/1R-7HOUCI3ezyq3QFkQpOf4fAYl5Dso2z/preview" allowfullscreen></iframe></div>
+        </div>
     </div>
 </section>
 
 <footer><p>臺北市立內湖高級工業職業學校 - 控制科 | Dept. of Control Engineering, NIHS</p></footer>
 
-<div id="audio-panel" style="position: fixed; bottom: 20px; right: 20px; z-index: 9999; display: flex; flex-direction: column; gap: 10px; align-items: flex-end;">
-    <div style="display: flex; flex-direction: column; gap: 8px;">
-        <button onclick="openMiniPlayer('zh')" style="background: #28a745;">
-            <span style="font-size: 14px;">🔊</span>
-            <span>中文</span>
-        </button>
-        <button onclick="openMiniPlayer('en')" style="background: #004a87;">
-            <span style="font-size: 14px;">🔊</span>
-            <span>EN</span>
-        </button>
-        <button onclick="openMiniPlayer('es')" style="background: #c60b1e;">
-            <span style="font-size: 14px;">🔊</span>
-            <span>ES</span>
-        </button>
-    </div>
-    
+<div id="audio-panel" style="position: fixed; bottom: 20px; right: 20px; z-index: 9999; display: flex; flex-direction: column; gap: 8px; align-items: flex-end;">
+    <button onclick="openMiniPlayer('zh')" style="background: #28a745;"><span>🔊</span>中文</button>
+    <button onclick="openMiniPlayer('en')" style="background: #004a87;"><span>🔊</span>EN</button>
+    <button onclick="openMiniPlayer('es')" style="background: #c60b1e;"><span>🔊</span>ES</button>
     <div id="mini-player-box" style="display: none; background: #ffffff; padding: 8px; border-radius: 12px; box-shadow: 0 8px 20px rgba(0,0,0,0.3); width: 220px; border: 1px solid #eee;">
         <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 5px; padding: 0 5px;">
-            <span id="player-title" style="font-size: 11px; color: #666; font-weight: bold; font-family: sans-serif;">Audio Player</span>
-            <button onclick="closeMiniPlayer()" style="border: none; background: #ddd; color: #555; border-radius: 50%; width: 18px; height: 18px; cursor: pointer; font-size: 10px; line-height: 18px; text-align: center; animation: none;">✕</button>
+            <span id="player-title" style="font-size: 11px; color: #666; font-weight: bold;">Audio Player</span>
+            <button onclick="closeMiniPlayer()" style="border: none; background: #ddd; color: #555; border-radius: 50%; width: 18px; height: 18px; cursor: pointer; font-size: 10px; line-height: 18px; text-align: center;">✕</button>
         </div>
         <iframe id="audio-frame" src="" width="100%" height="50" frameborder="0" scrolling="no" style="border-radius: 5px; background: #f9f9f9;"></iframe>
     </div>
@@ -257,33 +237,18 @@
     function openMiniPlayer(lang) {
         const box = document.getElementById('mini-player-box');
         const iframe = document.getElementById('audio-frame');
-        const title = document.getElementById('player-title');
-        
         const config = {
-            'zh': { 
-                url: 'https://drive.google.com/file/d/1r3JWcponVUtOZtypCe6WEDq_Bg-WdY09/preview', 
-                label: '中文導覽簡介' 
-            },
-            'en': { 
-                url: 'https://drive.google.com/file/d/1S0NJ20aWYJWddk1j0nCJCy1qcWr-CC6Q/preview', 
-                label: 'English Introduction' 
-            },
-            'es': { 
-                url: 'https://drive.google.com/file/d/1hOjRX1ag3gm1CnKuIaPlmyOT7W8UsPWw/preview', 
-                label: 'ES Presentación' 
-            }
+            'zh': { url: 'https://drive.google.com/file/d/1r3JWcponVUtOZtypCe6WEDq_Bg-WdY09/preview', label: '中文導覽簡介' },
+            'en': { url: 'https://drive.google.com/file/d/1S0NJ20aWYJWddk1j0nCJCy1qcWr-CC6Q/preview', label: 'English Introduction' },
+            'es': { url: 'https://drive.google.com/file/d/1hOjRX1ag3gm1CnKuIaPlmyOT7W8UsPWw/preview', label: 'ES Presentación' }
         };
-
         box.style.display = 'block';
-        title.innerText = config[lang].label;
+        document.getElementById('player-title').innerText = config[lang].label;
         iframe.src = config[lang].url;
     }
-
     function closeMiniPlayer() {
-        const box = document.getElementById('mini-player-box');
-        const iframe = document.getElementById('audio-frame');
-        iframe.src = "";
-        box.style.display = 'none';
+        document.getElementById('mini-player-box').style.display = 'none';
+        document.getElementById('audio-frame').src = "";
     }
 </script>
 
